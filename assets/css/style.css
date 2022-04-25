@@ -1,0 +1,62 @@
+.todo {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.actions {
+    flex-shrink: 0;
+}
+
+button {
+    cursor: pointer;
+}
+
+.error {
+    color: rgb(189, 35, 94);
+    display: none;
+}
+
+#intro {
+    position: relative;
+}
+
+#intro::before {
+    content: "";
+    position: absolute;
+    top: -.5em;
+    right: .5em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #000;
+    clip-path: polygon(0 100%, 50% 0, 50% 0, 100% 100%, 100% 100%, 50% 80%, 0 100%);
+    animation: showHide 5s infinite ease;
+    transform: rotate(-35deg);
+}
+
+@keyframes showHide {
+    0%, 100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    50% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #intro * {
+        font-size: .9em !important;
+    }
+}
+
+span.close {
+    position: absolute;
+    top: -1em;
+    right: -.2em;
+    font-size: 1em;
+    cursor: pointer;
+}
